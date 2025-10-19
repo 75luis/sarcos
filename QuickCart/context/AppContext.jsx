@@ -1,5 +1,6 @@
 'use client'
 import { productsDummyData, userDummyData } from "@/assets/assets";
+import { getArticulos } from "./articulo-api";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -22,6 +23,16 @@ export const AppContextProvider = (props) => {
     const fetchProductData = async () => {
         setProducts(productsDummyData)
     }
+
+        // ✅ Nueva función que obtiene los productos desde el backend
+    const fetchProductData2 = async () => {
+        try {
+            const data = await getArticulos();
+            setProducts(data);
+        } catch (error) {
+            console.error("Error al cargar los productos:", error);
+        }
+    };
 
     const fetchUserData = async () => {
         setUserData(userDummyData)
