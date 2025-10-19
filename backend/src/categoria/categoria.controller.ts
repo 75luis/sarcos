@@ -17,7 +17,7 @@ export class CategoriaController {
   @ApiBody({ type: CreateCategoriaDto })
   create(@Body() createCategoriaDto: CreateCategoriaDto) {
     return this.categoriaService.create(createCategoriaDto);
-  }
+  } 
 
   @Get()
   
