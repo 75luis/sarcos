@@ -15,6 +15,7 @@ import { CondicionProductoModule } from './condicion-producto/condicion-producto
       port: 3306,
       username: 'root',
       password: '', 
+      //cambiar la bd luego
       database: 'articulo',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
